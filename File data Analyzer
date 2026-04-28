@@ -1,0 +1,26 @@
+with open("data.txt", "r") as data:
+    total = 0
+    count = 0
+    max_num = None
+    min_num = None
+
+    for line in data:
+        num = int(line.strip())
+
+        total += num
+        count += 1
+
+        if max_num is None or num > max_num:
+            max_num = num
+
+        if min_num is None or num < min_num:
+            min_num = num
+
+if count > 0:
+    average = total / count
+    print("Total:", total)
+    print("Average:", average)
+    print("Max:", max_num)
+    print("Min:", min_num)
+else:
+    print("No data found")
