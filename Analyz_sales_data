@@ -1,0 +1,29 @@
+#Calculate Revenue 
+# Calculate Total Revenue 
+# Max_sales in the product
+
+
+with open("practice.csv", "r") as sales:
+    next(sales)
+    total_revenue = 0
+    max_revenue =0
+    top_product =""
+    for lines in sales:
+        parts=lines.strip().split(",")
+
+        product = (parts[1])
+        price= int(parts[2])
+        quantity =int(parts[3])
+
+        revenue = price * quantity
+        print(product , "-> Revenue :", revenue)
+
+        total_revenue += revenue
+        
+        if revenue > max_revenue:
+            max_revenue =revenue
+            top_product=product
+
+        
+print("Total_revenue",total_revenue)
+print("Top_product",top_product)
